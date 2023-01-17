@@ -27,8 +27,12 @@ function onFormSubmit(evt) {
 }
 
 function onLocalData(obj) {
-  const data = JSON.stringify(obj);
-  localStorage.setItem(STORAGE_KEY, data);
+  try {
+    const data = JSON.stringify(obj);
+    localStorage.setItem(STORAGE_KEY, data);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 function populateData(obj) {
