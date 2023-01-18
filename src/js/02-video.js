@@ -10,13 +10,16 @@ function onPlayerTime(data) {
     const obj = JSON.stringify(data);
     localStorage.setItem('videoplayer-current-time', obj);
   } catch (error) {
-    console.error(error);
+    console.error("error");
   }
 }
 
-const play = localStorage.getItem('videoplayer-current-time');
-const time = JSON.parse(play);
-if(play){
+const time = JSON.parse(localStorage.getItem('videoplayer-current-time'));
+if(time){
   player.setCurrentTime(time.seconds);
 }
+
+
+ 
+
 
