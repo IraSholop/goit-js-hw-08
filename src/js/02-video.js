@@ -16,5 +16,7 @@ function onPlayerTime(data) {
 
 const play = localStorage.getItem('videoplayer-current-time');
 const time = JSON.parse(play);
+if(play){
+  player.setCurrentTime(time.seconds);
+}
 
-player.setCurrentTime(time.seconds);
